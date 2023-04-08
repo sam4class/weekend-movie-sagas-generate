@@ -15,6 +15,22 @@ router.get('/', (req, res) => {
     })
 
 });
+//put this GET in for movies
+// router.get('/:id', (req, res) => {
+//   console.log('in server', req.params.id)
+//   // Add query to get all genres
+//   const sqlTExt = `SELECT * FROM "movies"
+//   WHERE id = ${req.params.id}`;
+
+//   pool.query(sqlTExt)
+//   .then((result) => {
+//     res.send(result.rows);
+//   }).catch ((err) => {
+//     console.log('error in GET server', err)
+//     res.sendStatus(500)
+//   })
+ 
+// });
 
 router.post('/', (req, res) => {
   console.log(req.body);
