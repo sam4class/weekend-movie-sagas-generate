@@ -80,6 +80,7 @@ VALUES
 (13,6), (13,10), (13,1),  -- Titanic
 (14,1), (14,2), (14,4);   -- Toy Story
 
-SELECT * FROM "movies_genres"
-JOIN movies ON movies_genres.movie_id = movies.id
-JOIN genres ON movies_genres.genre_id = genres.id 
+-- SELECT * FROM "movies_genres"
+-- JOIN movies ON movies_genres.movie_id = movies.id
+-- JOIN genres ON movies_genres.genre_id = genres.id 
+-- WHERE movie_id = 
