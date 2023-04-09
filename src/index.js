@@ -15,6 +15,7 @@ import axios from 'axios';
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
     yield takeEvery('DETAILS_MOVIES', fetchDetails)
+    yield takeEvery('SET_NEW_MOVIE', postNewMovie)
 }
 
 function* fetchDetails(action){
@@ -37,10 +38,21 @@ function* fetchAllMovies() {
         console.log('get all:', movies.data);
         yield put({ type: 'SET_MOVIES', payload: movies.data });
 
-    } catch {
-        console.log('get all error');
+    } catch(err){
+        console.log('get all error', err);
     }
         
+}
+
+function* postNewMovie(action) {
+    // console.log('in postNewMovie', action.payload)
+    try{
+        yield axios.post(`/api/movie`, action.payload)
+        console.log('POST saga', action.payload); //it's not getting it here
+        // yield put({type: 'FETCH_MOVIE'})  
+    }catch(err) {
+        console.log('error in fetchNewMovie', err)
+    }
 }
 
 // Create sagaMiddleware
@@ -66,11 +78,22 @@ const genres = (state = [], action) => {
     }
 }
 
+const newMovie = (state = [], action) => {
+    switch (action.type) {
+        case 'SET_NEW_MOVIE':
+            return action.payload;
+        case 'CLEAR_NEW_MOVIE':
+            return [];
+    }
+    return state;
+}
+
 // Create one store that all components can use
 const storeInstance = createStore(
     combineReducers({
         movies,
         genres,
+        newMovie,
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),
