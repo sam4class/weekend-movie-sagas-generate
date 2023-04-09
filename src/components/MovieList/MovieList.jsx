@@ -23,9 +23,15 @@ function MovieList() {
     //     history.push('/details')
     // }
 
+    function movieForm(){
+        history.push('/movies')
+    }
+
     return (
         <main>
-            <h1>MovieList</h1>
+            
+            <h2>MovieList</h2>
+            <button className='addButton' onClick={movieForm}>Add Your Movie</button>
             <section className="movies">
                 {movies.map(movie => {
                     return (
@@ -37,7 +43,7 @@ function MovieList() {
                                     payload: movie.id
                                 });
                                 history.push('/details')
-                            }} src={movie.poster} alt={movie.title} />
+                            }} className='moviePoster' src={movie.poster} alt={movie.title} />
                         </div>
                     );
                 })}

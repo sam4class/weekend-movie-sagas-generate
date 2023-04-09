@@ -22,3 +22,95 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.button, .addButton {
+  background-color: #5348b1; 
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 5px 15px;
+  margin: 2px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+input{
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 10px 0;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  border-radius:10px;
+  width: 50%;
+}
+
+li{
+  list-style-type: none;
+}
+
+.title{
+  margin: 10px;
+  font-size: xx-large;
+}
+
+.poster {
+  margin: 10px;
+  margin-top: 32px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+h1{
+  color:#342d75;
+  font-family: cursive;
+  font-size: 50px;
+  margin-bottom: 5px;
+  /* box-shadow:0 0 15px 4px rgba(0,0,0,0.06); */
+}
+
+h2{
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 35px;
+}
+
+.genreText{
+  font-style: italic;
+}
+
+.description{
+  margin: 50px;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-bottom: 300px;
+  padding: 15px;
+  outline-style: dotted;
+  outline-color: #f2fb35;
+  outline-offset: 15px;
+}
+
+body{
+ 
+  position: relative;
+  background: hsl(190, 47%, 93%)
+}
+
+h3{
+  margin-top: 45px;
+}
+
+.moviePoster{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+  transition: 0.3s;
+  border-radius: 5px;
+  margin: 15px;
+  margin-top: 5px;
+}
+
+
+
+

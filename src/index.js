@@ -48,8 +48,8 @@ function* postNewMovie(action) {
     // console.log('in postNewMovie', action.payload)
     try{
         yield axios.post(`/api/movie`, action.payload)
-        console.log('POST saga', action.payload); //it's not getting it here
-        // yield put({type: 'FETCH_MOVIE'})  
+        console.log('POST saga', action.payload); //it's not getting it
+        yield put({type: 'FETCH_MOVIE'})  
     }catch(err) {
         console.log('error in fetchNewMovie', err)
     }

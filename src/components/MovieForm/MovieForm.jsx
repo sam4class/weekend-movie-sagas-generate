@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import React from 'react';
 import AddedMovie from '../AddedMovie/AddedMovie';
+import { useHistory } from 'react-router-dom';
 
  
  function MovieForm(){
@@ -14,6 +15,7 @@ import AddedMovie from '../AddedMovie/AddedMovie';
 
     const newMovie = useSelector((store) => store.newMovie);
     const dispatch = useDispatch();
+    const history = useHistory();
 
     function addMovie(event){
         event.preventDefault();
@@ -30,17 +32,20 @@ import AddedMovie from '../AddedMovie/AddedMovie';
         setAddPoster('')
         setAddDescription('')
         setAddGenre('')
+
+        history.push('/')
     }
+    
 
     function cancelMovie(){
-        console.log('inside cancelMovie()');
+        history.push('/')
     }
 
 
     
     return (<>
     
-        <h1>Add a Movie!</h1>
+        <h2>Add a Movie!</h2>
 
         <form onSubmit={addMovie}>
             <input type="text" placeholder="Movie Title" value={addTitle} onChange={(event) => setAddTitle(event.target.value)}/><br />
@@ -67,21 +72,25 @@ import AddedMovie from '../AddedMovie/AddedMovie';
             </label><br />
             <p>Genre: {addGenre}</p>
 
-            <button type="submit">Save Movie</button><br />
-            <button onClick={cancelMovie}>Cancel</button>
+            <button className='button' type="submit">Save Movie</button><br />
+            <button className='button' onClick={cancelMovie}>Cancel</button>
+            </form>
+            {/* <button className='button' onClick={cancelMovie}>Cancel</button> */}
 
-            <h2>Your Added Movie</h2>
+            {/* <h2>Your Added Movie:</h2> */}
+            {/* <h3>Last Movie You Added:</h3>
             {newMovie ?
             <>
                 <img src={newMovie.poster} />
-                <li>Title: {newMovie.title}</li>
-                <li>Description: {newMovie.description}</li>
-                <li>Genre:{newMovie.name}</li>
+                <li className="title">{newMovie.title}</li>
+                <li>{newMovie.name}</li>
+                <li>{newMovie.description}</li>
+                
             </>
             : <p>Waiting For Your Movie</p>}
-    
+     */}
             {/* <pre>{JSON.stringify(newMovie)}</pre> */}
-        </form>
+        
         </>)
  }
 

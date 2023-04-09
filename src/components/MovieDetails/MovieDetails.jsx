@@ -17,20 +17,21 @@ function MovieDetails() {
 
 
     return (<>
-        <h1>Movie Details</h1>
-        <button onClick={handleClick}>Back to List</button>
+        <h2>Movie Details</h2>
+        <button className='button' onClick={handleClick}>Back to List</button>
         <br />
 
         {genres.length ?
             <>
-                <img src={genres[0].poster} />
-                <li>Title: {genres[0].title}</li>
-                <li>Description: {genres[0].description}</li>
+                <img className="poster" src={genres[0].poster} />
+                <p className="title">{genres[0].title}</p>
+               
                 {genres.map((title) => (
-                    <ul key={title.id}>
-                        <li>{title.name}</li>
-                    </ul>
+                    <span className='genreText' key={title.id}>
+                        <li></li>{title.name}
+                    </span>
                 ))}
+                <p className='description' >{genres[0].description}</p>
             </>
             : <p>Waiting For Movie</p>}
         
