@@ -85,12 +85,12 @@ h2{
 
 .description{
   margin: 50px;
-  margin-left: 150px;
-  margin-right: 150px;
+  margin-left: 200px;
+  margin-right: 200px;
   margin-bottom: 300px;
   padding: 15px;
-  outline-style: dotted;
-  outline-color: #f2fb35;
+  outline-style: dashed;
+  outline-color: #e0e66a;
   outline-offset: 15px;
 }
 

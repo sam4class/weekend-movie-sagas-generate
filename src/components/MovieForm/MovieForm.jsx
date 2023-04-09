@@ -25,7 +25,7 @@ import { useHistory } from 'react-router-dom';
                 title: addTitle,
                 poster: addPoster,
                 description: addDescription,
-                name: addGenre 
+                genre_id: addGenre
             }
         })
         setAddTitle('')
@@ -56,18 +56,18 @@ import { useHistory } from 'react-router-dom';
 
             <select value={addGenre} onChange={(event) => setAddGenre(event.target.value)}>
                 <option label="" value="empty"></option>
-                <option label="Adventure" value="Adventure"></option>
-                <option label="Animated" value="Animated"></option>
-                <option label="Biographical" value="Biographical"></option>
-                <option label="Comedy" value="Comedy"></option>
-                <option label="Disaster" value="Disaster"></option>
-                <option label="Drama" value="Drama"></option>
-                <option label="Epic" value="Epic"></option>
-                <option label="Fanstasy" value="Fanstasy"></option>
-                <option label="Musical" value="Musical"></option>
-                <option label="Romantic" value="Romantic"></option>
-                <option label="Science Fiction" value="Science Fiction"></option>
-                <option label="Space-Opera" value="Space-Opera"></option>
+                <option label="Adventure" value="1"></option>
+                <option label="Animated" value="2"></option>
+                <option label="Biographical" value="3"></option>
+                <option label="Comedy" value="4"></option>
+                <option label="Disaster" value="5"></option>
+                <option label="Drama" value="6"></option>
+                <option label="Epic" value="7"></option>
+                <option label="Fanstasy" value="8"></option>
+                <option label="Musical" value="9"></option>
+                <option label="Romantic" value="10"></option>
+                <option label="Science Fiction" value="11"></option>
+                <option label="Space-Opera" value="12"></option>
             </select>
             </label><br />
             <p>Genre: {addGenre}</p>
@@ -75,6 +75,8 @@ import { useHistory } from 'react-router-dom';
             <button className='button' type="submit">Save Movie</button><br />
             <button className='button' onClick={cancelMovie}>Cancel</button>
             </form>
+            
+            {/* <AddedMovie /> */}
             {/* <button className='button' onClick={cancelMovie}>Cancel</button> */}
 
             {/* <h2>Your Added Movie:</h2> */}
