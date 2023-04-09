@@ -13,6 +13,7 @@ function MovieList() {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
 
+    //moving this to onClick to get the id
     // function handleClick(id){
     //     console.log('Inside handleClick()')
     //     dispatch({ 
@@ -30,10 +31,13 @@ function MovieList() {
                     return (
                         <div key={movie.id} >
                             <h3>{movie.title}</h3>
-                            <img onClick={() => {  dispatch({ 
-                                        type: 'DETAILS_MOVIES', 
-                                        payload: movie.id });
-                                        history.push('/details')}} src={movie.poster} alt={movie.title}/>
+                            <img onClick={() => {
+                                dispatch({
+                                    type: 'DETAILS_MOVIES',
+                                    payload: movie.id
+                                });
+                                history.push('/details')
+                            }} src={movie.poster} alt={movie.title} />
                         </div>
                     );
                 })}
