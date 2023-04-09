@@ -68,6 +68,7 @@ h1{
   font-family: cursive;
   font-size: 50px;
   margin-bottom: 5px;
+  text-shadow: 2px 2px #b7aaaa;
   /* box-shadow:0 0 15px 4px rgba(0,0,0,0.06); */
 }
 
@@ -84,8 +85,8 @@ h2{
 
 .description{
   margin: 50px;
-  margin-left: 200px;
-  margin-right: 200px;
+  margin-left: 150px;
+  margin-right: 150px;
   margin-bottom: 300px;
   padding: 15px;
   outline-style: dotted;
@@ -96,7 +97,7 @@ h2{
 body{
  
   position: relative;
-  background: hsl(190, 47%, 93%)
+  background: hsl(192, 35%, 92%)
 }
 
 h3{

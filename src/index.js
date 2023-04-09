@@ -21,7 +21,7 @@ function* rootSaga() {
 function* fetchDetails(action){
     console.log('inside fetchDetails', action)
     try{
-        const details = yield axios.get(`/api/genre/${action.payload}`)
+        const details = yield axios.get(`/api/movie/${action.payload}`)
         // const detailMovie = yield axios.get(`/api/movie/${action.payload}`)
         // yield put({type: 'SET_GENRES', payload:{ genre: details.data, movie: detailMovie.data}})
         yield put({type: 'SET_GENRES', payload: details.data})
