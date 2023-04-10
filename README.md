@@ -16,9 +16,9 @@ We were given an existing Movie App that needed features added using React-Redux
 
 ## Screen Shot
 <br/>
-<img width="400" src="public/images/movieView.png"/>
-<img width="400" src="public/images/movieForm.png"/>
-<img width="400" src="public/images/movieDetails.png"/>
+<img width="300" src="public/images/movieView.png"/>
+<img width="300" src="public/images/movieForm.png"/>
+<img width="300" src="public/images/movieDetails.png"/>
 <br/>
 
 
