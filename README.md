@@ -5,20 +5,20 @@
 We were given an existing Movie App that needed features added using React-Redux and Redux-Sagas and a database that needed to be joined.
 
 ## Features to be Added
-<ol>
+<ul>
     <li>When a movie is clicked, the user should be able to see the movie and it's details</li>
     <li>Detail Page should show all details, including All genres for that selected movie</li>
     <li>Detail Page should have a button to return to the home page</li>
     <li>Add a Movie form that allows the user to add their own movie title, image, description, and have a dropdown of all the genres fot the user to pick one</li>
     <li>Movie form page should have a 'canel' button that takes the user to the home page</li>
     <li>Movie form page should have a 'save' button that takes the user to the home page and shows their new movie on the list</li>
-</ol>
+</ul>
 
 ## Screen Shot
 <br/>
-<img width="300" src="public/images/movieView.png"/>
-<img width="300" src="public/images/movieForm.png"/>
-<img width="300" src="public/images/movieDetails.png"/>
+<img width="400" src="public/images/movieView.png"/>
+<img width="400" src="public/images/movieForm.png"/>
+<img width="400" src="public/images/movieDetails.png"/>
 <br/>
 
 
