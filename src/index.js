@@ -13,19 +13,19 @@ import axios from 'axios';
 
 // Create the rootSaga generator function
 function* rootSaga() {
+    //FETCH_MOVIES is shouted with reducer SET_MOVIES to GET all the movies in the database: const movies
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
-    yield takeEvery('DETAILS_MOVIES', fetchDetails)
-    yield takeEvery('SET_NEW_MOVIE', postNewMovie)
+    //DETAILS_MOVIES is shouted with reducer SET_DETAILS to GET the movie clicked: const genres
+    yield takeEvery('DETAILS_MOVIES', fetchDetails);
+    //SET_NEW_MOVIE is shouted with reducer SET_NEW_MOVIE to POST the new movie from input fields: const newMovie
+    yield takeEvery('SET_NEW_MOVIE', postNewMovie);
 }
 
 function* fetchDetails(action){
     console.log('inside fetchDetails', action)
     try{
         const details = yield axios.get(`/api/movie/${action.payload}`)
-        // const detailMovie = yield axios.get(`/api/movie/${action.payload}`)
-        // yield put({type: 'SET_GENRES', payload:{ genre: details.data, movie: detailMovie.data}})
         yield put({type: 'SET_GENRES', payload: details.data})
-
     }catch(err){
         console.log('err in fetchDetails index.js', err)
     }
@@ -48,7 +48,7 @@ function* postNewMovie(action) {
     // console.log('in postNewMovie', action.payload)
     try{
         yield axios.post(`/api/movie`, action.payload)
-        console.log('POST saga', action.payload); //it's not getting it
+        console.log('POST saga', action.payload); //not getting it, because I had the wrong thing in values="" in dropdown: fixed!
         yield put({type: 'FETCH_MOVIE'})  
     }catch(err) {
         console.log('error in fetchNewMovie', err)
@@ -59,6 +59,7 @@ function* postNewMovie(action) {
 const sagaMiddleware = createSagaMiddleware();
 
 // Used to store movies returned from the server
+//called in function* that handshakes with the server GET
 const movies = (state = [], action) => {
     switch (action.type) {
         case 'SET_MOVIES':
@@ -69,6 +70,7 @@ const movies = (state = [], action) => {
 }
 
 // Used to store the movie genres
+//called in function* that handshakes with the server GET.id
 const genres = (state = [], action) => {
     switch (action.type) {
         case 'SET_GENRES':
@@ -77,7 +79,8 @@ const genres = (state = [], action) => {
             return state;
     }
 }
-
+//Used to store the infromation given the the input form
+//called in function* that handshakes with the server POST
 const newMovie = (state = [], action) => {
     switch (action.type) {
         case 'SET_NEW_MOVIE':

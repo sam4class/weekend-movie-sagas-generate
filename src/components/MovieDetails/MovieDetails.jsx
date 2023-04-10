@@ -6,6 +6,8 @@ import { useEffect } from "react";
 function MovieDetails() {
 
     const history = useHistory();
+
+    //grabbing the store/reducer that is holding the items clicked
     const genres = useSelector((store) => store.genres)
     console.log('in details', genres)
 
@@ -15,7 +17,8 @@ function MovieDetails() {
     }
 
 
-
+    //this is looping through the store that is holding info to place on the DOM what we need the user to see
+    //put it in a ternary to make sure the race condition is paused when needed to catch up the render
     return (<>
         <h2>Movie Details</h2>
         <button className='button' onClick={handleClick}>Back to List</button>
@@ -34,7 +37,7 @@ function MovieDetails() {
                 <p className='description' >{genres[0].description}</p>
             </>
             : <p>Waiting For Movie</p>}
-        
+    
 
     </>)
 }

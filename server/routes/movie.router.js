@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool')
 
+//the GET for MovieDetails is at the bottom
+//needed to add 
+
+//this is the GET to get all the movies
 router.get('/', (req, res) => {
 
   const query = `SELECT * FROM movies ORDER BY "title" ASC`;
@@ -15,22 +19,6 @@ router.get('/', (req, res) => {
     })
 
 });
-//put this GET in for movies
-// router.get('/:id', (req, res) => {
-//   console.log('in server', req.params.id)
-//   // Add query to get all genres
-//   const sqlTExt = `SELECT * FROM "movies"
-//   WHERE id = ${req.params.id}`;
-
-//   pool.query(sqlTExt)
-//   .then((result) => {
-//     res.send(result.rows);
-//   }).catch ((err) => {
-//     console.log('error in GET server', err)
-//     res.sendStatus(500)
-//   })
- 
-// });
 
 router.post('/', (req, res) => {
   console.log(req.body);
@@ -69,6 +57,7 @@ router.post('/', (req, res) => {
   })
 })
 
+//this is the GET for MovieDetails
 router.get('/:id', (req, res) => {
   console.log('in server', req.params.id)
  // Add query to get all genres

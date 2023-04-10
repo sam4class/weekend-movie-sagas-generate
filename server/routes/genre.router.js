@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool')
 
+
+//moved this to movie
+
 // router.get('/:id', (req, res) => {
 //    console.log('in server', req.params.id)
 //   // Add query to get all genres

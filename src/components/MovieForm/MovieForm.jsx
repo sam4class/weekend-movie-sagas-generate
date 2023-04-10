@@ -76,12 +76,10 @@ import { useHistory } from 'react-router-dom';
             <button className='button' onClick={cancelMovie}>Cancel</button>
             </form>
             
-            {/* <AddedMovie /> */}
             {/* <button className='button' onClick={cancelMovie}>Cancel</button> */}
-
-            {/* <h2>Your Added Movie:</h2> */}
-            {/* <h3>Last Movie You Added:</h3>
-            {newMovie ?
+            {/* <h3>Last Movie You Added Today:</h3>
+             <AddedMovie /> */}
+            {/* {newMovie ?
             <>
                 <img src={newMovie.poster} />
                 <li className="title">{newMovie.title}</li>
@@ -89,8 +87,8 @@ import { useHistory } from 'react-router-dom';
                 <li>{newMovie.description}</li>
                 
             </>
-            : <p>Waiting For Your Movie</p>}
-     */}
+            : <p>Waiting For Your Movie</p>} */}
+    
             {/* <pre>{JSON.stringify(newMovie)}</pre> */}
         
         </>)

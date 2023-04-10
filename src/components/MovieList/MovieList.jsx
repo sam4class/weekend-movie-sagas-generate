@@ -7,13 +7,18 @@ function MovieList() {
 
     const dispatch = useDispatch();
     const history = useHistory();
+
+    //grabing the store/reducer that holds all the movies from the database
     const movies = useSelector(store => store.movies);
 
+    //useing useEffect to render to the DOM as soon as it loads
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
 
-    //moving this to onClick to get the id
+    //moving this to onClick in the return to get the id
+    //keeping this here to remind me why I moved it
+
     // function handleClick(id){
     //     console.log('Inside handleClick()')
     //     dispatch({ 
@@ -27,6 +32,7 @@ function MovieList() {
         history.push('/movies')
     }
 
+    //the dispatch is grabbing all the info/id and putting it in a saga that is attached to a reducer that is holding what was clicked
     return (
         <main>
             
