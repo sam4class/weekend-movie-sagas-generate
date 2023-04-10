@@ -39,4 +39,5 @@ We were given an existing Movie App that needed features added using React-Redux
     <li>Run npm run server in your terminal</li>
     <li>Run npm run client in your terminal<li>
     <li>The npm run client command will open up a new browser tab for you!</li>
+</ol>
 
