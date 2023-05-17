@@ -7,6 +7,7 @@ import { useHistory } from 'react-router-dom';
  
  function MovieForm(){
 
+    //made local state here because this is the only place that cares, after here the information is in the store
     const [addTitle, setAddTitle] = useState([]);
     const [addPoster, setAddPoster] = useState([]);
     const [addDescription, setAddDescription] = useState([]);
@@ -19,6 +20,7 @@ import { useHistory } from 'react-router-dom';
 
     function addMovie(event){
         event.preventDefault();
+        //this dispatch is getting all the info from the input fields ans storing it in a reducer and also putting it in a saga to call the POST
         dispatch({
             type: 'SET_NEW_MOVIE',
             payload: {
@@ -76,7 +78,9 @@ import { useHistory } from 'react-router-dom';
             <button className='button' onClick={cancelMovie}>Cancel</button>
             </form>
             
-            {/* <button className='button' onClick={cancelMovie}>Cancel</button> */}
+            {/* {keeping this here for the code challenge: ways i got my mind to work it out} */}
+            
+
             {/* <h3>Last Movie You Added Today:</h3>
              <AddedMovie /> */}
             {/* {newMovie ?

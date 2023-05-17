@@ -14,7 +14,6 @@ CREATE TABLE "genres" (
   "name" VARCHAR(80) NOT NULL
 );
 
-
 -- JUNCTION TABLE
 -- Movies can have multiple genres and each genre can be applied to multiple movies
 -- This is many-to-many!

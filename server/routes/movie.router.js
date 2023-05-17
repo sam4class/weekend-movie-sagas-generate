@@ -3,7 +3,7 @@ const router = express.Router();
 const pool = require('../modules/pool')
 
 //the GET for MovieDetails is at the bottom
-//needed to add 
+
 
 //this is the GET to get all the movies
 router.get('/', (req, res) => {
